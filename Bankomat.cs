@@ -8,7 +8,10 @@ class Bankomat {
     return MoneyToSpend / banknot;
   }
 
-  private uint[] GiveMoney() {
+  private uint[]? GiveMoney() {
+    if (MoneyToSpend % 10 != 0) {
+      return null;
+    }
     uint[] banknotesNumber = {0, 0, 0, 0, 0, 0};
     for (int i = 0; i < Banknotes.Length; ++i) {
       if (MoneyToSpend - Banknotes[i] >= 0) {
@@ -22,29 +25,33 @@ class Bankomat {
     return banknotesNumber;
   }
 
-  public (uint[], string?) SpendMoney() {
-    uint[] banknotesNumber = GiveMoney();
+  public (uint[]?, string?) SpendMoney() {
+    uint[]? banknotesNumber = GiveMoney();
+    if (banknotesNumber == null) {
+      return (null, "nie mozna wypłacić takiej kwoty"); 
+    }
     uint capacity = 0;
     for (int u = 0; u < Banknotes.Length; ++u) {
-      capacity += banknotesNumber[u];
+      if (banknotesNumber != null) {
+        capacity += banknotesNumber[u];
+      }
     }
     
     uint[] result = new uint[capacity];
     
     int i = 0, j = 0;
     while (i < Banknotes.Length && j < capacity) {
-      if (banknotesNumber[i] > 0) {
-        for (int k = 0; k < banknotesNumber[i] && j < capacity; ++k) {
-          result[j] = Banknotes[i];
-          j++;
+      if (banknotesNumber != null) {
+        if (banknotesNumber[i] > 0) {
+          for (int k = 0; k < banknotesNumber[i] && j < capacity; ++k) {
+            result[j] = Banknotes[i];
+            j++;
+          }
         }
       }
       i++;
     }
-    if (MoneyToSpend == 0) {
-      return (result, "");
-    }
-    return (result, "nie mozna wyplacic pełnej kwoty, lub wyplata jest calkowicie niemozliwa");
+    return (result, "");
   }
   public void SetMoneyToSpend(uint v) { MoneyToSpend = v; }
 }

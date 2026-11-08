@@ -20,8 +20,10 @@ class Interface {
     Bankomat b = new Bankomat(m, 100);
     switch (Money) {
       case 1:
-        (uint[], string?) spend = b.SpendMoney();
-        Show(spend.Item1);
+        (uint[]?, string?) spend = b.SpendMoney();
+        if (spend.Item1 != null) {
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
@@ -29,7 +31,9 @@ class Interface {
       case 2:
         b.SetMoneyToSpend(280);
         spend = b.SpendMoney();
-        Show(spend.Item1);
+        if (spend.Item1 != null) {
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
@@ -37,7 +41,9 @@ class Interface {
       case 3:
         b.SetMoneyToSpend(750);
         spend = b.SpendMoney();
-        Show(spend.Item1);
+        if (spend.Item1 != null) {
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
@@ -45,7 +51,9 @@ class Interface {
       case 4:
         b.SetMoneyToSpend(1250);
         spend = b.SpendMoney();
-        Show(spend.Item1);
+        if (spend.Item1 != null) {  
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
@@ -53,15 +61,19 @@ class Interface {
       case 5:
         b.SetMoneyToSpend(125);
         spend = b.SpendMoney();
-        Show(spend.Item1);
+        if (spend.Item1 != null) {
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
         break;
       case 6:
         b.SetMoneyToSpend(0);
-        spend = b.SpendMoney();   
-        Show(spend.Item1);
+        spend = b.SpendMoney();  
+        if (spend.Item1 != null) {
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
@@ -69,7 +81,9 @@ class Interface {
       default:
         b.SetMoneyToSpend(Money);
         spend = b.SpendMoney();
-        Show(spend.Item1);
+        if (spend.Item1 != null) {
+          Show(spend.Item1);
+        }
         if (spend.Item2 != null) {
           Console.WriteLine(spend.Item2);
         }
@@ -87,8 +101,8 @@ class Interface {
 
   public void UserInput() {
     ShowInterface();
-    var input = Console.ReadLine();
     while (true) {
+      var input = Console.ReadLine();
       //input = Console.ReadLine();
       if (uint.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out uint temp)) {
         Money = temp;
