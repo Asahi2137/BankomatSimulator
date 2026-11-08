@@ -4,28 +4,26 @@ class Bankomat {
 
   public Bankomat(uint[] tab, uint val) {Banknotes = tab; MoneyToSpend = val;} // przekazalem pozortowaja malejaca
 
-  private uint IntegerDiv(uint sum, uint banknot) {
-    return sum / banknot;
+  private uint IntegerDiv(uint banknot) {
+    return MoneyToSpend / banknot;
   }
 
   private uint[] GiveMoney() {
-    uint sum = MoneyToSpend;
     uint[] banknotesNumber = {0, 0, 0, 0, 0, 0};
     for (int i = 0; i < Banknotes.Length; ++i) {
-      if (sum - Banknotes[i] >= 0) {
-        banknotesNumber[i] = IntegerDiv(sum, Banknotes[i]);
-        if (sum == 0) {
+      if (MoneyToSpend - Banknotes[i] >= 0) {
+        banknotesNumber[i] = IntegerDiv(Banknotes[i]);
+        if (MoneyToSpend == 0) {
           break;
         }
-        sum = sum - Banknotes[i] * banknotesNumber[i];
+        MoneyToSpend = MoneyToSpend - Banknotes[i] * banknotesNumber[i];
       }
     }
     return banknotesNumber;
   }
 
-  public uint[] SpendMoney() {
+  public (uint[], string?) SpendMoney() {
     uint[] banknotesNumber = GiveMoney();
-    // wymysl jak fajnie petle przeleciec by miec liczbe elementow (Capacity += banknotes[i)
     uint capacity = 0;
     for (int u = 0; u < Banknotes.Length; ++u) {
       capacity += banknotesNumber[u];
@@ -43,8 +41,10 @@ class Bankomat {
       }
       i++;
     }
-    // bo lsp
-    return result;
+    if (MoneyToSpend == 0) {
+      return (result, "");
+    }
+    return (result, "nie mozna wyplacic pełnej kwoty, lub wyplata jest calkowicie niemozliwa");
   }
   public void SetMoneyToSpend(uint v) { MoneyToSpend = v; }
 }
