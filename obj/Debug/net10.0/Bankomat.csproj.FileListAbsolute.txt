@@ -1,0 +1,15 @@
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/bin/Debug/net10.0/Bankomat
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/bin/Debug/net10.0/Bankomat.deps.json
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/bin/Debug/net10.0/Bankomat.runtimeconfig.json
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/bin/Debug/net10.0/Bankomat.dll
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/bin/Debug/net10.0/Bankomat.pdb
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.AssemblyInfoInputs.cache
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.AssemblyInfo.cs
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.csproj.CoreCompileInputs.cache
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.sourcelink.json
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.dll
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/refint/Bankomat.dll
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.pdb
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/Bankomat.genruntimeconfig.cache
+/Users/kamil/programming/studia/sem1/PPK/wyk/zad3/Bankomat/obj/Debug/net10.0/ref/Bankomat.dll
